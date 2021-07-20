@@ -1,0 +1,2 @@
+//Data table
+$(".tablas").Datatables();
