@@ -180,6 +180,13 @@
                                         </div>
 
                                         <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha de creacion de la categoria<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" id="editarfecha" name="editarfecha"  value="" readonly type="text" />
+                                            </div>
+                                        </div>
+
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Categoria<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" id="editarCategoria" name="editarCategoria" type="text" />

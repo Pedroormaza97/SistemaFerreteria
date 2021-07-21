@@ -2,7 +2,7 @@
 
 $(document).on("click", ".btnEditarCategoria", function(){ 
 	var idCategoria = $(this).attr("idCategoria");
-	//console.log("id", id);
+	console.log("id", idCategoria);
 
 	 var datos = new FormData();
 	 datos.append("idCategoria", idCategoria);
@@ -18,6 +18,7 @@ $(document).on("click", ".btnEditarCategoria", function(){
 	 	success: function(respuesta){
 	 		$("#editarid").val(respuesta["id"]);
 	 		$("#editarCategoria").val(respuesta["categoria"]);
+	 		$("#editarfecha").val(respuesta["fecha"]);
 	 		
 	 		
 
