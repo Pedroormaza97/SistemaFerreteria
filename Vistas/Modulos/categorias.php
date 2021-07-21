@@ -171,24 +171,24 @@
                                     
                                         
                                         <span class="section">Categoria Info</span>
+
+
                                         
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id Categoria<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id Categoria:<span class="required">*</span></label>
+                                            <div class="col-md-1 col-sm-6  form-group">
                                                 <input class="form-control" id="editarid" name="editarid"  value="" readonly type="text" />
                                             </div>
-                                        </div>
-
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha de creacion de la categoria<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
+                                        
+                                            <label class="col-form-label col-md-1 col-sm-1 label-align">Fecha:<span class="required">*</span></label>
+                                            <div class="col-md-4 col-sm-6  form-group">
                                                 <input class="form-control" id="editarfecha" name="editarfecha"  value="" readonly type="text" />
                                             </div>
                                         </div>
 
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Categoria<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Categoria:<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-12">
                                                 <input class="form-control" id="editarCategoria" name="editarCategoria" type="text" />
                                             </div>
                                         </div>

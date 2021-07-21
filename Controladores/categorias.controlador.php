@@ -98,7 +98,7 @@ class ControladorCategorias{
    */
     static public function ctrEditarCategorias(){
 
-      if(isset($_POST["editarId"])){
+      if(isset($_POST["editarid"])){
         if(preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["editarCategoria"])){
 
 
@@ -107,9 +107,9 @@ class ControladorCategorias{
 
 
 
-       $datos = array("arr_id" => $_POST["editarId"],
+       $datos = array("arr_id" => $_POST["editarid"],
                         "arr_categoria" => $_POST["editarCategoria"],
-                        "arr_Fecha" => $_POST["editarFecha"]);
+                        "arr_fecha" => $_POST["editarfecha"]);
 
        $respuesta = ModeloCategorias::mdlEditarCategorias($tabla, $datos);
 
@@ -125,7 +125,7 @@ class ControladorCategorias{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "categorias";
             }
 
 
@@ -143,7 +143,7 @@ class ControladorCategorias{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "categorias";
             }
 
 
@@ -174,7 +174,7 @@ class ControladorCategorias{
            closeOnConfirm: false}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "categorias";
             }
 
 
