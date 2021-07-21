@@ -7,7 +7,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Administrar Usuarios</h3>
+        <h3>Administrar Categorias</h3>
       </div>
       </div>
     <div class="clearfix"></div>
@@ -16,7 +16,7 @@
       <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
           <div class="x_title">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalnuevousuario">Nuevo usuario</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalnuevaCategoria">Nueva categoria</button>
             </div>
 
 
@@ -34,65 +34,32 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Usuario</th>
-                          <th>Rol</th>
-                          <th>Cedula</th>
-                          <th>Foto</th>
-                          <th>Estado</th>
-                          <th>Último login</th>
+                          <th>Categoria</th>
+                          <th>Fecha</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
 
-                        <!-- <?php
+                         <?php
                         $item = null;
                         $valor = null;
-                        $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                        $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
-                        foreach ($usuarios as $key => $value) {
+                        foreach ($categorias as $key => $value) {
                           
                           echo '
                           <tr>
-                          <td>'.$value["idUsuario"].'</td>
-                          <td>'.$value["userUsuario"].'</td>
-                          <td>'.$value["rol_idrol"].'</td>
-                          <td>'.$value["cedulaP"].'</td>';
-
-                          if($value["FotoPerfilUsuario"] != ""){
-                            echo '<td><img src="'.$value["FotoPerfilUsuario"].'"
-                          class="img-thumbnail" width="40px"></td>';
-
-
-
-
-                          }else{
-
-
-                            echo'<td><img src="vistas/img/usuarios/imguser.png"imguser
-                          class="img-thumbnail" width="40px"></td>';
-                          }
-
-                          
-                          if($value["Estado"] == "activo"){
-
-                            echo '<td><button class="btn btn-success btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="inactivo">Activado</button></td>';
-                          }elseif ($value["Estado"] == "inactivo") {
-
-                            echo '<td><button class="btn btn-danger btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="activo">Desactivado</button></td>';
-                            
-                          }
-                          
-
-                          echo '
-                          <td>'.$value["ultimo_login"].'</td>
+                          <td>'.$value["id"].'</td>
+                          <td>'.$value["categoria"].'</td>
+                          <td>'.$value["fecha"].'</td>
                           <td>
 
                           <div class="btn-group">
-                          <button type="button" class="btn btn-warning btnEditarUsuario"  idUsuario="'.$value["idUsuario"].'" data-toggle="modal" data-target="#modaleditarusuario"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-warning btnEditarCategoria"  idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modaleditarCategoria"><i class="fa fa-pencil"></i></button>
 
 
-                          <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["idUsuario"].'" usuario="'.$value["userUsuario"].'" fotoUsuario="'.$value["FotoPerfilUsuario"].'"><i class="fa fa-times"></i></button>
+                          <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
                           </div>
                           </td> 
                           </tr>';
@@ -103,7 +70,7 @@
 
 
 
-                        ?>  -->
+                        ?> 
                       </tbody>
                     </table>
                   </div>
@@ -113,16 +80,16 @@
                 
 <!-- /page content -->
                
-<!--MODAL DE NUEVO USUARIO-->
+<!--MODAL DE NUEVA CATEGORIA-->
 
-            <div  class="modal fade" id="modalnuevousuario" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div  class="modal fade" id="modalnuevaCategoria" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <form class="" action="" method="post" enctype="multipart/form-data"  novalidate>
                   <div class="x_content">
                   <!--MODAL HEADER-->
                   <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">DATOS DEL NUEVO USUARIO</h4>
+                    <h4 class="modal-title" id="myModalLabel">DATOS DE LA NUEVA CATEGORIA</h4>
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
                   </div>
@@ -134,69 +101,18 @@
                       <div class="x_content">
                                     
                                         
-                                        <span class="section">Personal Info</span>
+                                        <span class="section">Categoria Info</span>
 
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de la Categoria<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaCedulap"  id="cedulaUsuario" required="required" required type="text" /></div>
+                                                <input class="form-control" name="nuevaCategoria"  id="nuevaCategoria" required="required" required type="text" /></div>
                                         </div>
                                         
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Usuario<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevoUsuario" id="nombreUsuario" readonly  type="text" />
-                                            </div>
-                                        </div>
-                                        <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span class="required">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <input type="password" class="form-control input-lg"  id="password1" name="nuevoPassword" required="required" />
-                                          
-                                          <span style="position: absolute;right:15px;top:7px;" onclick="hideshow()" >
-                                            <i id="slash" class="fa fa-eye-slash"></i>
-                                            <i id="eye" class="fa fa-eye"></i>
-                                          </span>
-                                        </div>
-                                      </div>
-                                      
-                                        <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Rol<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control"  Type="select" required required="select" name="nuevoRol">
-                                            <option></option>
-                                            <option value="1">1.- Administrador</option>
-                                            <option value="2">2.- Medico</option>
-                                            <option value="3">3.- Recepcionista</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                        
-                                        <div class="field item form-group btn-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Foto de Perfil:<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input type="file" class="nuevaFoto" name="nuevaFoto"> 
-                                                <p class="help-block">Peso maximo 2 MB</p>
-                                                <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
-
-
-                                        </div>
-
-                                       <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" Type="text" required  required="required" name="nuevoEstado">
-                                            <option></option>
-                                            <option value="Activo">ACTIVO</option>
-                                            <option value="Inactivo">INACTIVO</option>
-                                          </select>
-                                        </div>
-                                      </div>
-
-                                        
+                                       
                                             
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary btnNuevoUsuario">Ingresar</button>
+                                                    <button type='submit' class="btn btn-primary btnNuevaCategoria">Ingresar</button>
                                                     <button type='reset' class="btn btn-success">Reset</button>
                                                     
                                                 </div>
@@ -219,8 +135,8 @@
 
               </div>
               <?php
-                                             $crearUsuario = new ControladorUsuarios();
-                                             $crearUsuario -> ctrCrearUsuario();
+                                             $crearCategoria = new ControladorCategorias();
+                                             $crearCategoria -> ctrCrearCategorias();
 
                                                 ?>
 
@@ -233,16 +149,16 @@
         </div>
       </div>
 
-<!--MODAL DE EDITAR USUARIO-->
+<!--MODAL DE EDITAR CATEGORIA-->
 
-            <div id="modaleditarusuario" class="modal fade" role="dialog" aria-hidden="true" >
+            <div  class="modal fade" id="modaleditarCategoria" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <form class="" action="" method="post" enctype="multipart/form-data" novalidate>
                   <div class="x_content">
                   <!--MODAL HEADER-->
                   <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">EDITAR USUARIO</h4>
+                    <h4 class="modal-title" id="myModalLabel">EDITAR CATEGORIA</h4>
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
                   </div>
@@ -254,65 +170,24 @@
                       <div class="x_content">
                                     
                                         
-                                        <span class="section">Personal Info</span>
+                                        <span class="section">Categoria Info</span>
                                         
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Usuario<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id Categoria<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" id="editarUsuario" name="editarUsuario"  value="" readonly type="text" />
+                                                <input class="form-control" id="editarid" name="editarid"  value="" readonly type="text" />
                                             </div>
                                         </div>
+
                                         <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">
-                                        Editar Password<span class="required">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <input type="password" class="form-control input-lg"  id="password2" name="editarPassword" />
-                                          <input type="hidden" id="passwordActual" name="passwordActual">
-                                          
-                                          <span style="position: absolute;right:15px;top:7px;" onclick="hideshow1()" >
-                                            <i id="slash" class="fa fa-eye-slash"></i>
-                                            <i id="eye" class="fa fa-eye"></i>
-                                          </span>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Categoria<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" id="editarCategoria" name="editarCategoria" type="text" />
+                                            </div>
                                         </div>
-                                      </div>
+                                        
                       
-                                        <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Rol<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" Type="text" name="editarRol">
-                                            <option value="" id="editarPerfil"></option>
-                                            <option value="1">1.- Administrador</option>
-                                            <option value="2">2.- Medico</option>
-                                            <option value="3">3.- Recepcionista</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">
-                                            Editar Cedula<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" id="editarCedulap" name="editarCedulap" value="" readonly type="text" /></div>
-                                        </div>
-                                        <div class="field item form-group btn-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cambiar Foto de Perfil:<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input type="file" class="nuevaFoto" name="editarFoto"> 
-                                                <p class="help-block">Peso maximo 2 MB</p>
-                                                <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
-                                                <input type="hidden" name="fotoActual" id="fotoActual">
 
-                                        </div>
-
-                                        <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" Type="text" name="editarEstado">
-                                            <option value="" id="editarEstado"></option>
-                                            <option value="activo">activo</option>
-                                            <option value="Inactivo">inactivo</option>
-                                          </select>
-                                        </div>
-                                      </div>
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
@@ -339,8 +214,8 @@
 
               </div>
               <?php
-                                             $editarUsuario = new ControladorUsuarios();
-                                             $editarUsuario -> ctrEditarUsuario();
+                                             $editarCategorias = new ControladorCategorias();
+                                             $editarCategorias -> ctrEditarCategorias();
 
                                                 ?> 
 

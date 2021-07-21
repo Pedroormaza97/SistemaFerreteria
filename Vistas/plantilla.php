@@ -217,6 +217,7 @@ session_start();
 
     <script src="vistas/js/usuarios.js"></script>
     <script src="vistas/js/personas.js"></script>
+    <script src="vistas/js/categorias.js"></script>
         </div>
       </div>
       
