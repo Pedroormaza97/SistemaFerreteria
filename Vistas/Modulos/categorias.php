@@ -59,7 +59,7 @@
                           <button type="button" class="btn btn-warning btnEditarCategoria"  idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modaleditarCategoria"><i class="fa fa-pencil"></i></button>
 
 
-                          <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                          <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'" idNombre_Categoria="'.$value["categoria"].'"><i class="fa fa-times"></i></button>
                           </div>
                           </td> 
                           </tr>';
@@ -343,7 +343,7 @@
 <?php
 
 
-  $borrarUsuario = new ControladorUsuarios();
-  $borrarUsuario -> ctrEliminarUsuario();
+  $borrarCategorias = new ControladorCategorias();
+  $borrarCategorias -> ctrEliminarCategoria();
 
 ?>

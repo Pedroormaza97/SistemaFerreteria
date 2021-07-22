@@ -34,3 +34,38 @@ $(document).on("click", ".btnEditarCategoria", function(){
 
 
 })
+/*EDITAR CATEGORIA*/
+$(document).on("click", ".btnEliminarCategoria", function(){ 
+
+	idCategoria = $(this).attr("idCategoria");
+	idNombre_Categoria = $(this).attr("idNombre_Categoria");
+	//para futura eliminacion automatica de usuario al eliminar una persona
+	//usuario = $(this).attr("usuario"); o realizar eliminacion en cascada en la base de datos
+
+Swal.fire({
+		title: "¿Esta seguro de eliminar esta categoria?",
+		text: "Si no lo está puede cancelar la accion!",
+		icon: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#3085d6",
+		cancelButtonColor: "#d33",
+		cancelButtonText: "Cancelar",
+		confirmButtonText: "Si, eliminar la categoria"
+
+
+	}).then((result)=>{
+		if(result.value){
+			window.location = "index.php?ruta=categorias&idCategoria="+idCategoria+"&idNombre_Categoria="+idNombre_Categoria;
+
+
+		}
+
+	})
+
+
+
+
+
+})
+
+

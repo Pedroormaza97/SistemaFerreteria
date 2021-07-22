@@ -94,7 +94,7 @@ class ControladorCategorias{
          }
        }//llave de metodo
     /**
-   * EDITAR USUARIOS
+   * EDITAR CATEGORIAS
    */
     static public function ctrEditarCategorias(){
 
@@ -187,6 +187,72 @@ class ControladorCategorias{
     }
   }
 
+     /**
+   * ELIMINAR CATEGORIA
+   */
 
+
+    static public function ctrEliminarCategoria(){
+
+      if(isset($_GET["idCategoria"])){
+        $tabla = "categorias";
+        $datos = $_GET["idCategoria"];
+
+
+        $respuesta = ModeloCategorias::mdlEliminarCategoria($tabla, $datos);
+
+
+        if($respuesta == "ok"){
+            
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "La categoria '.$_GET["idNombre_Categoria"].' a sido eliminada de los registros correctamente.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "categorias";
+            }
+
+
+            });
+            </script>';
+
+             
+           }else if($respuesta == "error"){
+            
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudo eliminar la categoria de los registros.",
+            icon: "warning",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "categorias";
+            }
+
+
+            });
+            </script>';
+
+           //}
+            
+           
+
+         
+
+          }
+
+
+
+
+
+      }
+
+
+
+    }
 
 }//llave de cierre de clase
